@@ -68,6 +68,24 @@
         button:hover {
             background-color: #0056b3;
         }
+
+        .player-images-container img {
+        width: 200px;  
+        height: 300px; 
+        object-fit: cover; 
+        }
+
+        .comparison-message-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+
     </style>
 </head>
 <body>
@@ -75,10 +93,11 @@
         <div class="header-container">
             <h1>NBA 2021-2022 Regular Season All-Star Player Comparison</h1>
             <img src="nbalogo.avif" alt="NBA All-Star Logo" height="150">
+
         </div>
         <hr>
+        <img src="logo.jpg" alt="NBA All-Star Logo" height="150">
         <div class="select-container">
-            <img src="logo.jpg" alt="NBA All-Star Logo" height="150">
             <label for="player1">Select Player 1:</label><br>
             <select id="player1">
                 <option value="Bam Adebayo">Bam Adebayo</option>
@@ -112,7 +131,7 @@
 
             function playerNameToFilename(name) {
             // Assuming the image names are lowercase and formatted as 'firstname_lastname.png'
-            return 'static/images/' + name.toLowerCase().replace(/[\s’']/g, '_') + '.png';
+            return 'static/images/' + name.replace(/\s/g, '').toLowerCase() + '.png';
             }
 
             var player1 = document.getElementById("player1").value;
@@ -124,9 +143,9 @@
             var player2 = document.getElementById("player2").value;
             // Display player images
             // Update the src attributes for the images
-            document.getElementById("player1-img").src = "static/images/" + playerNameToFilename(player1);
+            document.getElementById("player1-img").src = playerNameToFilename(player1);
             document.getElementById("player1-img").style.display = "block";
-            document.getElementById("player2-img").src = "static/images/" + playerNameToFilename(player2);
+            document.getElementById("player2-img").src = playerNameToFilename(player2);
             document.getElementById("player2-img").style.display = "block";
             
             // Placeholder for actual logic to determine which player deserved to be an All-Star
