@@ -1,0 +1,18 @@
+<!-- comparison_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparison Result</title>
+</head>
+<body>
+    <h1>Comparison Results</h1>
+    {% if result_paths.player1_stats and result_paths.player2_stats %}
+        <img src="{{ url_for('static', filename=result_paths.player1_stats) }}" alt="Player 1 Stats">
+        <img src="{{ url_for('static', filename=result_paths.player2_stats) }}" alt="Player 2 Stats">
+    {% else %}
+        <p>No data to display. Please go back and select two players.</p>
+    {% endif %}
+</body>
+</html>
+

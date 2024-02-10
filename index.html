@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA ALL-Star Selection Analysis Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #007bff; /* NBA blue */
+        }
+        hr {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .header-container h1 {
+            margin-right: 20px;
+        }
+        .select-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-container">
+            <h1>NBA 2021-2022 Regular Season All-Star Player Comparison</h1>
+            <img src="nbalogo.avif" alt="NBA All-Star Logo" height="150">
+        </div>
+        <hr>
+        <div class="select-container">
+            <img src="logo.jpg" alt="NBA All-Star Logo" height="150">
+            <label for="player1">Select Player 1:</label><br>
+            <select id="player1">
+                <option value="Bam Adebayo">Bam Adebayo</option>
+                <option value="Anthony Edwards">Anthony Edwards</option>
+                <option value="DeAaron Fox">DeAaron Fox</option>
+                <option value="Jaylen Brown">Jaylen Brown</option>
+                <option value="Anthony Davis">Anthony Davis</option>
+            </select><br>
+            <label for="player2">Select Player 2:</label><br>
+            <select id="player2">
+                <option value="Andrew Wiggins">Andrew Wiggins</option>
+                <option value="Draymond Green">Draymond Green</option>
+                <option value="Fred VanVleet">Fred VanVleet</option>
+                <option value="Chris Paul">Chris Paul</option>
+                <option value="Kris Middleton">Kris Middleton</option>
+            </select><br>
+            <button onclick="comparePlayers()">Compare Players</button>
+        </div>
+
+        <div id="player-images" class="player-images-container">
+            <img id="player1-img" src="" alt="Player 1" style="display:none;">
+            <img id="player2-img" src="" alt="Player 2" style="display:none;">
+        </div>
+        <div id="comparison-message" class="comparison-message-container">
+            <!-- The comparison message will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        function comparePlayers() {
+
+            function playerNameToFilename(name) {
+            // Assuming the image names are lowercase and formatted as 'firstname_lastname.png'
+            return 'static/images/' + name.toLowerCase().replace(/[\s’']/g, '_') + '.png';
+            }
+
+            var player1 = document.getElementById("player1").value;
+            var player2 = document.getElementById("player2").value;
+            alert("Comparing " + player1 + " and " + player2);
+            // You can add further logic here to handle the player comparison
+
+            var player1 = document.getElementById("player1").value;
+            var player2 = document.getElementById("player2").value;
+            // Display player images
+            // Update the src attributes for the images
+            document.getElementById("player1-img").src = "static/images/" + playerNameToFilename(player1);
+            document.getElementById("player1-img").style.display = "block";
+            document.getElementById("player2-img").src = "static/images/" + playerNameToFilename(player2);
+            document.getElementById("player2-img").style.display = "block";
+            
+            // Placeholder for actual logic to determine which player deserved to be an All-Star
+            // This logic should be replaced with an actual comparison based on your data
+            var message = player1 + " and " + player2 + " are both great players, but based on the data, ";
+            if (Math.random() > 0.5) { // This is a placeholder for actual comparison logic
+                message += player1 + " deserved to be an All-Star this season.";
+            } else {
+                message += player2 + " deserved to be an All-Star this season.";
+            }
+            document.getElementById("comparison-message").textContent = message;
+
+        }
+    </script>
+</body>
+</html>
