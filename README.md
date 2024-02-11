@@ -7,6 +7,8 @@ We can provide an unbiased analysis of player performances, backed by comprehens
 
 You can enter 2 different players in their respective input fields, with the help of a responsive dropdown menu. Once you select them, and click the "compare" button, some of their stats will load in charts at the bottom.
 
+NBA_all_stars.pynb: Exploratory Data Analysis using python
+nba_all_stars.py: Python code for the Exploratory Data Analysis
 index.html: main HTML file
 
 
