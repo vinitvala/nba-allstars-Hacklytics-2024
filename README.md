@@ -18,5 +18,7 @@ main dataset: nba_stats.csv
 This is just a prototype and can be extended to include more players and more statistics to compare the players.
 
 Citations
+
 dataset: https://www.kaggle.com/datasets/vivovinco/nba-player-stats?resource=download
+
 NBA API: https://pypi.org/project/nba_api/
