@@ -1,4 +1,4 @@
-packages = ["pandas", "numpy", "matplotlib", "js" ]
+packages = ["pandas", "numpy", "matplotlib" ]
 
 [files]
 "./nba_stats.csv" = "nba_stats.csv"
